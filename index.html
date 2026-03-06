@@ -139,17 +139,6 @@ section{padding:72px 0}
 .learn-card h3{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:8px}
 .learn-card p{font-size:.85rem;color:var(--text-light);line-height:1.55}
 
-/* VIDEO */
-.video-section{background:linear-gradient(135deg,#1A1A2E 0%,#2D1B69 100%)}
-.video-section .section-title{color:white}
-.video-section .section-desc{color:rgba(255,255,255,.65)}
-.video-wrap{max-width:720px;margin:40px auto 0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.4);aspect-ratio:16/9;position:relative;background:linear-gradient(135deg,#2a1f5c,#1a3a5c);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:transform .2s}
-.video-wrap:hover{transform:scale(1.01)}
-.video-scan-line{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(255,255,255,.015) 2px,rgba(255,255,255,.015) 4px)}
-.video-thumb-content{text-align:center;z-index:1}
-.video-thumb-content p{color:rgba(255,255,255,.5);font-size:.85rem;margin-top:12px}
-.play-btn-wrap{width:80px;height:80px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 0 0 16px rgba(255,107,43,.2);transition:transform .2s;color:white;margin:0 auto 8px}
-.video-wrap:hover .play-btn-wrap{transform:scale(1.1)}
 
 /* TESTIMONIALS (NOVO) */
 .testimonials-section{background:var(--bg)}
@@ -335,14 +324,14 @@ section{padding:72px 0}
             <span><img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Pai usuário"></span>
             <span><img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Mãe usuária"></span>
           </div>
-          <div class="social-proof-text"><span class="stars">★★★★★</span><br><strong>+12.400 famílias</strong> já transformaram a leitura dos filhos</div>
+          <div class="social-proof-text"><span class="stars">★★★★★</span><br><strong>+8.700 pais e professores</strong> já usam o método em casa e na escola</div>
         </div>
         <ul class="hero-checks">
           <li><span class="check-icon" aria-hidden="true">✓</span> Ideal para crianças de 2 a 12 anos, no ritmo natural de cada uma</li>
           <li><span class="check-icon" aria-hidden="true">✓</span> Mesmo que ainda não reconheça letras ou sons</li>
           <li><span class="check-icon" aria-hidden="true">✓</span> Funciona também com TDAH, Autismo ou dificuldades de foco</li>
         </ul>
-        <a href="#checkout" class="cta-btn" aria-label="Ver oferta do Kit Grafismo Fonético">Quero meu filho lendo rápido! 🚀</a>
+        <a href="#checkout" class="cta-btn" aria-label="Ver oferta do Kit Grafismo Fonético" id="heroBtn" onclick="event.preventDefault();const el=document.getElementById('checkout');el.scrollIntoView({behavior:'smooth',block:'start'});const box=document.getElementById('checkoutBox');if(box)box.classList.add('visible');">Quero meu filho lendo rápido! 🚀</a>
       </div>
       <div class="hero-image">
         <img src="https://educacaokids.com.br/wp-content/uploads/2025/05/1_MOCKUP-PRINCIPAL-GRAFISMO-FONETICO.webp" alt="Kit Grafismo Fonético – material completo">
@@ -416,30 +405,13 @@ section{padding:72px 0}
   <div class="container">
     <div class="section-label"><span class="tag" style="background:var(--purple);color:white;">O Que Vai Aprender</span></div>
     <h2 class="section-title text-center">📚 O que seu filho vai desenvolver</h2>
-    <p class="section-desc text-center">Um método completo que cobre todas as etapas do aprendizado de leitura</p>
+    <p class="section-desc text-center">Atividades progressivas do mais simples ao mais complexo — no ritmo certo de cada criança</p>
     <div class="learn-grid">
-      <div class="learn-card reveal"><span class="card-icon">🔤</span><h3>Reconhecimento de Sons e Letras</h3><p>Cada som é associado de forma intuitiva, fortalecendo conexões cerebrais sólidas e duradouras.</p></div>
-      <div class="learn-card reveal"><span class="card-icon">🧩</span><h3>Formação de Palavras</h3><p>Atividades dinâmicas que transformam a construção de palavras em experiência divertida e intuitiva.</p></div>
-      <div class="learn-card reveal"><span class="card-icon">📖</span><h3>Compreensão e Leitura Fluente</h3><p>Exercícios práticos que aprimoram a compreensão, ajudando seu filho a ganhar fluência e confiança.</p></div>
-      <div class="learn-card reveal"><span class="card-icon">🗺️</span><h3>Guia Passo a Passo com Ilustrações</h3><p>Instruções visuais e detalhadas para que cada fase do aprendizado seja clara e tranquila.</p></div>
+      <div class="learn-card reveal"><span class="card-icon">🔤</span><h3>Palavras com 2 Sílabas</h3><p>Ponto de partida ideal para iniciantes. A criança aprende sons e traçados com palavras simples do dia a dia, ganhando confiança desde o começo.</p></div>
+      <div class="learn-card reveal"><span class="card-icon">🧩</span><h3>Palavras com 3 Sílabas</h3><p>Consolidação do aprendizado com palavras de complexidade intermediária. Ideal para crianças que já dominam as sílabas simples e querem avançar.</p></div>
+      <div class="learn-card reveal"><span class="card-icon">📖</span><h3>Palavras com 4 Sílabas</h3><p>Fase de expansão e fluência. A criança pratica palavras mais longas com foco em ritmo, precisão e velocidade de leitura.</p></div>
+      <div class="learn-card reveal"><span class="card-icon">✏️</span><h3>Letra Cursiva e Bastão</h3><p>Todos os exercícios disponíveis nos dois tipos de letra usados nas escolas brasileiras, desenvolvendo coordenação motora fina e fluidez no traçado.</p></div>
     </div>
-  </div>
-</section>
-
-<!-- Video (FIX: placeholder melhorado) -->
-<section class="video-section reveal">
-  <div class="container text-center">
-    <div class="section-label"><span class="tag" style="background:rgba(255,255,255,.15);color:var(--yellow);">Como Funciona</span></div>
-    <h2 class="section-title" style="color:white;">Veja como é fácil ensinar seu filho a ler</h2>
-    <p class="section-desc">Assista e descubra o método em ação 👇</p>
-    <div class="video-wrap" role="button" aria-label="Assistir vídeo sobre o método Grafismo Fonético">
-      <div class="video-scan-line"></div>
-      <div class="video-thumb-content">
-        <div class="play-btn-wrap">▶</div>
-        <p>Clique para assistir ao vídeo</p>
-      </div>
-    </div>
-    <a href="https://pay.hotmart.com/Y104763540L?checkoutMode=10" target="_blank" rel="noopener" class="cta-btn" style="margin-top:36px;display:inline-block;">BAIXAR ATIVIDADES AGORA 📥</a>
   </div>
 </section>
 
@@ -497,7 +469,7 @@ section{padding:72px 0}
           <li><span class="dot" style="background:var(--purple)"></span> Atividades Nível 03 — Palavras com 4 Sílabas</li>
           <li><span class="dot" style="background:var(--pink)"></span> Grafismo em Letra Cursiva e Bastão</li>
         </ul>
-        <a href="https://pay.hotmart.com/Y104763540L?checkoutMode=10" target="_blank" rel="noopener" class="cta-btn green" style="margin-top:32px;display:inline-block;">Quero esse kit agora! 🎉</a>
+        <a href="#checkout" class="cta-btn green" style="margin-top:32px;display:inline-block;" onclick="event.preventDefault();const el=document.getElementById('checkout');el.scrollIntoView({behavior:'smooth',block:'start'});const box=document.getElementById('checkoutBox');if(box)box.classList.add('visible');">Quero esse kit agora! 🎉</a>
       </div>
       <div class="content-img"><img src="https://educacaokids.com.br/wp-content/uploads/2025/05/JcDcvm3874423-643x1024.webp" alt="Amostra das atividades impressas do kit" loading="lazy"></div>
     </div>
@@ -558,7 +530,7 @@ section{padding:72px 0}
           <li><span class="li-icon">🙎</span> Suporte Profissional</li>
           <li><span class="li-icon">💰</span> Garantia Incondicional de 7 Dias</li>
         </ul>
-        <div class="price-box">
+        <div class="price-box" id="oferta">
           <p class="price-old">No total tudo deveria custar <strong>R$ 453,00</strong></p>
           <div class="price-main" id="priceMain">R$ 37,90</div>
           <p class="price-install">ou 5x de R$ 8,39 sem juros</p>
@@ -599,8 +571,8 @@ section{padding:72px 0}
 
 <!-- Footer -->
 <footer class="site-footer">
-  <img src="https://educacaokids.com.br/wp-content/uploads/2023/04/AnyConv.com__LOGO-EDUCACAO-KIDSborda.webp" alt="Logo Educação Kids" class="footer-logo" loading="lazy">
-  <p class="footer-copy">Copyright © 2026. Todos os direitos reservados – Editora Inove</p>
+  <img src="https://i.postimg.cc/NGWZGsJB/Logo-colorido-da-marca-Primeiras-Letras.jpg" alt="Logo Primeiras Letras" class="footer-logo" loading="lazy">
+  <p class="footer-copy">Copyright © 2026. Todos os direitos reservados – Primeiras Letras</p>
 </footer>
 
 <!-- Floating CTA -->
@@ -691,6 +663,11 @@ if (priceEl) {
   }
   tick();
 })();
+</script>
+
+<script>document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeModal();
+});
 </script>
 </body>
 </html>
